@@ -23,13 +23,13 @@ function App() {
         <Route exact path="/login" element={<AdminLogin />} />
         <Route exact path="/register" element={<AdminRegister />} />
         <Route exact path="/profile" element={<AdminProfile />} />
-        <Route exact path="/categories" element={<MedicineCategory />} />
+        <Route exact path="/equipment" element={<MedicineCategory />} />
         <Route exact path="/addcategory" element={<AddCategory />} />
         <Route exact path="/updatecategory" element={<UpdateCategory />} />
-        <Route exact path="/types" element={<MedicineTypes />} />
+        <Route exact path="/location" element={<MedicineTypes />} />
         <Route exact path="/addtype" element={<AddType />} />
         <Route exact path="/updatetype" element={<UpdateType />} />
-        <Route exact path="/inventory" element={<Inventory />} />
+        <Route exact path="/medicalstocks" element={<Inventory />} />
         <Route exact path="/addmedicine" element={<AddMedicine />} />
         <Route exact path="/updatemedicine" element={<UpdateMedicine />} />
       </Routes>

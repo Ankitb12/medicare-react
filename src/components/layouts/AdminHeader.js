@@ -29,11 +29,19 @@ export default function AdminHeader(props) {
   };
   return (
     <>
-      <div className="main-header">
+      <div className="main-header ">
         <div className="logo-header">
-          <Link to="/" className="logo">
-            MediCare
-          </Link>
+          <div style={{
+            display:"flex",
+            gap:"10px"
+          }}>
+            <div>   <Link to="/" className="logo text-uppercase font-weight-bold">
+          SwiftCare
+          </Link></div>
+         
+          </div>
+       
+        
           <button
             className="navbar-toggler sidenav-toggler ml-auto"
             type="button"
@@ -51,19 +59,20 @@ export default function AdminHeader(props) {
         <nav className="navbar navbar-header navbar-expand-lg">
           <div className="container-fluid">
             <ul className="navbar-nav topbar-nav ml-md-auto align-items-center">
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown border border-primary rounded-pill">
                 <a
                   href="#"
                   onClick={() => setShowDropDown(!showDropDown)}
-                  className="dropdown-toggle profile-pic">
+                  className="dropdown-toggle profile-pic ">
                   {" "}
                   <img
                     src={`assets/img/profile4.jpg`}
                     alt="user-img"
                     width="36"
                     className="img-circle"
+                    
                   />
-                  <span>{userName !== "" ? userName : "Username"}</span>{" "}
+                  <span>Tony Manrique</span>{" "}
                 </a>
                 <ul className={`dropdown-menu dropdown-user ${showDropDown ? "show" : ""}`}>
                   <li>
@@ -72,7 +81,7 @@ export default function AdminHeader(props) {
                         <img src={`assets/img/profile4.jpg`} alt="user" />
                       </div>
                       <div className="u-text">
-                        <h4>{userName !== "" ? userName : "Username"}</h4>
+                        <h4>Tony Manrique</h4>
                         <p className="text-muted">{emailAddress !== "" ? emailAddress : "Email"}</p>
                       </div>
                     </div>

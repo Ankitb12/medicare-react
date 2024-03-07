@@ -1,27 +1,119 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Table, Button } from "antd";
 import AdminHeader from "./layouts/AdminHeader";
 import AdminSideBar from "./layouts/AdminSideBar";
 import AdminFooter from "./layouts/AdminFooter";
 import { db } from "../firebase";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 
-export default function MedicineCategory(props) {
-  var counter = 1;
-  const [categories, setCategories] = useState([]);
-  const categoriesCollectionReference = collection(db, "medicine_categories");
-  const getCategories = async () => {
-    const data = await getDocs(categoriesCollectionReference);
-    setCategories(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+const EquipmentList = (props) => {
+  const [equipment, setEquipment] = useState([]);
+  const equipmentCollectionReference = collection(db, "equipment");
+
+  const generateRandomData = () => {
+    const randomData = [];
+    const equipmentNames = [
+      "Wheel Chair",
+      "X-Ray Machine",
+      "Ventilator",
+      "Anesthesia Machine",
+      "Surgical Table",
+      "ECG Machine",
+      "Ultrasound Machine",
+      "Defibrillator",
+      "Hospital Bed",
+      "MRI Machine",
+    ];
+    const locations = [
+      "Emergency Department",
+      "Operating Room",
+      "Intensive Care Unit",
+      "Radiology Department",
+      "Laboratory",
+      "Patient Ward",
+      "Outpatient Clinic",
+      "Rehabilitation Center",
+    ];
+    equipmentNames.forEach((name, index) => {
+      randomData.push({
+        name: name,
+        category: `Category ${index + 1}`,
+        manufacturer: `Manufacturer ${index + 1}`,
+        serialNumber: `SN-${Math.floor(Math.random() * 10000)}`,
+        status: Math.random() < 0.5 ? "Allocated" : "Not Allocated",
+        location: locations[Math.floor(Math.random() * locations.length)],
+        purchaseDate: `2022-01-${Math.floor(Math.random() * 28) + 1}`,
+        warrantyExpiry: `2025-01-${Math.floor(Math.random() * 28) + 1}`,
+      });
+    });
+    return randomData;
   };
+
+  const getEquipment = async () => {
+    // You can replace this line with your actual data retrieval logic
+    const data = generateRandomData();
+    setEquipment(data);
+  };
+
   const handleDeleteButton = async (id) => {
-    const categoryDoc = doc(categoriesCollectionReference, id);
-    await deleteDoc(categoryDoc);
-    getCategories();
+    // Add your delete logic here
+    console.log(`Delete equipment with ID: ${id}`);
   };
+
   useEffect(() => {
-    getCategories();
+    getEquipment();
   }, []);
+
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+  
+  
+    {
+      title: "Serial Number",
+      dataIndex: "serialNumber",
+      key: "serialNumber",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+    },
+    {
+      title: "Location",
+      dataIndex: "location",
+      key: "location",
+    },
+    {
+      title: "Purchase Date",
+      dataIndex: "purchaseDate",
+      key: "purchaseDate",
+    },
+    {
+      title: "Warranty Expiry",
+      dataIndex: "warrantyExpiry",
+      key: "warrantyExpiry",
+    },
+    {
+      title: "Action",
+      key: "action",
+      render: (text, record) => (
+        <span>
+          <Link to={`/equipment/${record.id}`}>
+            <Button type="link">Details</Button>
+          </Link>
+          <Button type="link" danger onClick={() => handleDeleteButton(record.id)}>
+            Delete
+          </Button>
+        </span>
+      ),
+    },
+  ];
+
   return (
     <>
       <AdminHeader />
@@ -29,73 +121,34 @@ export default function MedicineCategory(props) {
       <div className="main-panel">
         <div className="content">
           <div className="container-fluid">
-            <h4 className="page-title">Medicine Categories</h4>
+            <h4 className="page-title">Equipment List</h4>
             <div className="row">
               <div className="col-md-12">
                 <div className="card card-tasks">
                   <div className="card-header ">
                     <h4 className="card-title">
-                      Categories List{" "}
-                      <Link to="/addcategory" className="btn btn-primary btn-sm float-right">
-                        Add new Category
-                      </Link>{" "}
+                      All Equipment{" "}
+                      <Link
+                        to="/add-equipment"
+                        className="btn btn-sm float-right"
+                        style={{ background: "#25408D", color: "white" }}
+                      >
+                        Add New Equipment
+                      </Link>
                     </h4>
                   </div>
-                  <div className="card-body ">
-                    <div className="table-full-width px-5 py-4 table-striped">
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Category Name</th>
-                            <th>Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {categories.map((category) => {
-                            return (
-                              <tr>
-                                <td>{counter++}</td>
-                                <td>{category.name}</td>
-                                <td className="td-actions">
-                                  <div className="form-button-action">
-                                    <Link to="/updatecategory">
-                                      <button
-                                        type="button"
-                                        className="btn btn-link btn-success"
-                                        onClick={() => {
-                                          localStorage.setItem(
-                                            "category_obj",
-                                            JSON.stringify(category)
-                                          );
-                                        }}>
-                                        <i className="la la-edit"></i>
-                                      </button>
-                                    </Link>
-                                    <button
-                                      type="button"
-                                      onClick={() => {
-                                        handleDeleteButton(category.id);
-                                      }}
-                                      className="btn btn-link btn-danger">
-                                      <i className="la la-times"></i>
-                                    </button>
-                                  </div>
-                                </td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
+                  <div className="card-body">
+                    <Table columns={columns} dataSource={equipment} />
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <AdminFooter />
       </div>
+      <AdminFooter />
     </>
   );
-}
+};
+
+export default EquipmentList;

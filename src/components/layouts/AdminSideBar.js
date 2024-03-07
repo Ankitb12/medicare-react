@@ -24,16 +24,16 @@ export default function AdminSideBar(props) {
   };
   return (
     <>
-      <div className="sidebar">
+      <div className="sidebar ">
         <div className="scrollbar-inner sidebar-wrapper">
           <div className="user">
-            <div className="photo">
+            <div className="photo border border-primary rounded-pill">
               <img src={`assets/img/profile4.jpg`} />
             </div>
             <div className="info">
               <a>
                 <span>
-                  {userName != "" ? userName : "Username"}
+                 Tony Manrique
                   <span className="user-level">Administrator</span>
                 </span>
               </a>
@@ -47,33 +47,21 @@ export default function AdminSideBar(props) {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/inventory">
+              <Link to="/medicalstocks">
                 <i className="la la-ambulance"></i>
-                <p>Inventory</p>
+                <p>Medicine Stocks</p>
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/categories">
+              <Link to="/equipment">
                 <i className="la la-align-justify"></i>
-                <p>Medicine Catgories</p>
+                <p>Equipment</p>
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/types">
+              <Link to="/location">
                 <i className="la la-sticky-note"></i>
-                <p>Medicine Types</p>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/profile">
-                <i className="la la-user"></i>
-                <p>Profile</p>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link onClick={handleLogout}>
-                <i className="la la-power-off"></i>
-                <p>Logout</p>
+                <p>Location</p>
               </Link>
             </li>
           </ul>

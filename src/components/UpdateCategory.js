@@ -74,7 +74,6 @@ export default function UpdateCategory() {
           </div>
         </div>
 
-        <AdminFooter />
       </div>
     </>
   );

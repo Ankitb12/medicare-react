@@ -178,7 +178,6 @@ export default function AddMedicine() {
           </div>
         </div>
 
-        <AdminFooter />
       </div>
     </>
   );

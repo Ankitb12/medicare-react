@@ -166,7 +166,6 @@ export default function AdminProfile() {
           </div>
         </div>
 
-        <AdminFooter />
       </div>
     </>
   );

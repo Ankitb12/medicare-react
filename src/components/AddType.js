@@ -72,7 +72,6 @@ export default function AddType() {
           </div>
         </div>
 
-        <AdminFooter />
       </div>
     </>
   );

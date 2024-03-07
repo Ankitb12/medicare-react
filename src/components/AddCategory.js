@@ -73,7 +73,6 @@ export default function AddCategory() {
           </div>
         </div>
 
-        <AdminFooter />
       </div>
     </>
   );

@@ -74,7 +74,6 @@ export default function UpdateType() {
           </div>
         </div>
 
-        <AdminFooter />
       </div>
     </>
   );

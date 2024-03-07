@@ -29,14 +29,17 @@ export default function Inventory() {
       <div className="main-panel">
         <div className="content">
           <div className="container-fluid">
-            <h4 className="page-title">Medicine Inventory</h4>
+            <h4 className="page-title">Medicine Stocks</h4>
             <div className="row">
               <div className="col-md-12">
                 <div className="card card-tasks">
                   <div className="card-header ">
                     <h4 className="card-title">
                       Inventory List{" "}
-                      <Link to="/addmedicine" className="btn btn-primary btn-sm float-right">
+                      <Link to="/addmedicine" className="btn btn-sm float-right" style={{
+                        background:"#25408D",
+                        color:"white"
+                      }}>
                         Add new Medicine
                       </Link>{" "}
                     </h4>
@@ -52,7 +55,6 @@ export default function Inventory() {
                             </th>
                             <th>Medicine Category</th>
                             <th>Medicine Type</th>
-                            <th>Medicine Price</th>
                             <th>Stock</th>
                             <th>Action</th>
                           </tr>
@@ -67,7 +69,6 @@ export default function Inventory() {
                                 </td>
                                 <td>{medicine.category}</td>
                                 <td>{medicine.type}</td>
-                                <td>₹{medicine.price}</td>
                                 <td>{medicine.stock}</td>
                                 <td className="td-actions">
                                   <div className="form-button-action">
@@ -106,7 +107,6 @@ export default function Inventory() {
             </div>
           </div>
         </div>
-        <AdminFooter />
       </div>
     </>
   );

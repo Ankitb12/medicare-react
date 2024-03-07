@@ -5,6 +5,7 @@ import AdminFooter from "./layouts/AdminFooter";
 import { Link } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { Tag } from "antd";
 
 export default function MedicineTypes() {
   var counter = 1;
@@ -23,21 +24,23 @@ export default function MedicineTypes() {
     getTypes();
   }, []);
   return (
-    <>
-      <AdminHeader />
+    <>      <AdminHeader />
       <AdminSideBar />
       <div className="main-panel">
         <div className="content">
           <div className="container-fluid">
-            <h4 className="page-title">Medicine Types</h4>
+            <h4 className="page-title">Location</h4>
             <div className="row">
               <div className="col-md-12">
                 <div className="card card-tasks">
                   <div className="card-header ">
                     <h4 className="card-title">
-                      Types List{" "}
-                      <Link to="/addtype" className="btn btn-primary btn-sm float-right">
-                        Add new Type
+                      location List{" "}
+                      <Link to="/addtype" className="btn btn-sm float-right" style={{
+                        background:"#25408D",
+                        color:"white"
+                      }}>
+                        Add new location
                       </Link>{" "}
                     </h4>
                   </div>
@@ -47,44 +50,114 @@ export default function MedicineTypes() {
                         <thead>
                           <tr>
                             <th>#</th>
-                            <th>Type Name</th>
+                            <th>location</th>
+                            <th>RFID</th>
+                            <th>Region</th>
+    <th>Patient Name</th>
+    <th>Disease</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          {medTypes.map((medType) => {
-                            return (
                               <tr>
-                                <td>{counter++}</td>
-                                <td>{medType.name}</td>
+                                <td>1</td>
+                                <td>483 Orn Manors Apt. 955</td>
+                                <td>327384</td>
+                                <td> West Kaylin</td>
+                                <td>Leo</td>  <td>typhoid</td>
                                 <td className="td-actions">
                                   <div className="form-button-action">
                                     <Link to="/updatetype">
                                       <button
                                         type="button"
-                                        className="btn btn-link btn-success"
-                                        onClick={() => {
-                                          localStorage.setItem(
-                                            "medtype_obj",
-                                            JSON.stringify(medType)
-                                          );
-                                        }}>
+                                        className="btn btn-link btn-success">
                                         <i className="la la-edit"></i>
                                       </button>
                                     </Link>
                                     <button
                                       type="button"
-                                      onClick={() => {
-                                        handleDeleteButton(medType.id);
-                                      }}
+                                    
                                       className="btn btn-link btn-danger">
                                       <i className="la la-times"></i>
                                     </button>
                                   </div>
                                 </td>
                               </tr>
-                            );
-                          })}
+                              <tr>
+                                <td>2</td>
+                                <td>8118 Reynolds Mission</td>
+                               
+                                <td>896575</td>
+                                <td> West bangal</td>
+                                <td>Elon</td>  <td>smallpox</td>
+                                <td className="td-actions">
+                                  <div className="form-button-action">
+                                    <Link to="/updatetype">
+                                      <button
+                                        type="button"
+                                        className="btn btn-link btn-success">
+                                        <i className="la la-edit"></i>
+                                      </button>
+                                    </Link>
+                                    <button
+                                      type="button"
+                                    
+                                      className="btn btn-link btn-danger">
+                                      <i className="la la-times"></i>
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr> <tr>
+                                <td>3</td>
+                                <td>186 Vanessa Haven</td>
+                              
+                                <td>867595</td>
+                                <td> Port Mylene</td>
+                                <td>Justine</td>  <td>hemophilia</td>
+                                <td className="td-actions">
+                                  <div className="form-button-action">
+                                    <Link to="/updatetype">
+                                      <button
+                                        type="button"
+                                        className="btn btn-link btn-success">
+                                        <i className="la la-edit"></i>
+                                      </button>
+                                    </Link>
+                                    <button
+                                      type="button"
+                                    
+                                      className="btn btn-link btn-danger">
+                                      <i className="la la-times"></i>
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>4</td>
+                                <td>348 Batz Extensions </td>
+                               
+                                <td>774783</td>
+                                <td> Russelchester</td>
+                                <td>Baber</td>  <td>Blood Cancer</td>
+                                <td className="td-actions">
+                                  <div className="form-button-action">
+                                    <Link to="/updatetype">
+                                      <button
+                                        type="button"
+                                        className="btn btn-link btn-success">
+                                        <i className="la la-edit"></i>
+                                      </button>
+                                    </Link>
+                                    <button
+                                      type="button"
+                                    
+                                      className="btn btn-link btn-danger">
+                                      <i className="la la-times"></i>
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr>
+                            
                         </tbody>
                       </table>
                     </div>
@@ -94,7 +167,6 @@ export default function MedicineTypes() {
             </div>
           </div>
         </div>
-        <AdminFooter />
       </div>
     </>
   );

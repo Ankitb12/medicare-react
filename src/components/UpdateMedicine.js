@@ -182,7 +182,6 @@ export default function UpdateMedicine() {
           </div>
         </div>
 
-        <AdminFooter />
       </div>
     </>
   );
