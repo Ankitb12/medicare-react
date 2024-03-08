@@ -35,7 +35,7 @@ export default function Inventory() {
                 <div className="card card-tasks">
                   <div className="card-header ">
                     <h4 className="card-title">
-                      Inventory List{" "}
+                    Medicine List{" "}
                       <Link to="/addmedicine" className="btn btn-sm float-right" style={{
                         background:"#25408D",
                         color:"white"
@@ -60,44 +60,117 @@ export default function Inventory() {
                           </tr>
                         </thead>
                         <tbody>
-                          {medicines.map((medicine) => {
-                            return (
                               <tr>
-                                <td>{counter++}</td>
+                                <td>1</td>
                                 <td>
-                                  {medicine.name} <sup>{medicine.power}</sup>
+                                Dolo 
+                                  <sup>600</sup>
                                 </td>
-                                <td>{medicine.category}</td>
-                                <td>{medicine.type}</td>
-                                <td>{medicine.stock}</td>
+                                <td>Analgesics</td>
+                                <td>Prescription vs. Over-the-Counter (OTC)   </td>
+                                <td>600</td>
                                 <td className="td-actions">
                                   <div className="form-button-action">
                                     <Link to="/updatemedicine">
                                       <button
                                         type="button"
                                         className="btn btn-link btn-success"
-                                        onClick={() => {
-                                          localStorage.setItem(
-                                            "medicine_obj",
-                                            JSON.stringify(medicine)
-                                          );
-                                        }}>
+                                       >
                                         <i className="la la-edit"></i>
                                       </button>
                                     </Link>
                                     <button
                                       type="button"
-                                      onClick={() => {
-                                        handleDeleteButton(medicine.id);
-                                      }}
+                                     
                                       className="btn btn-link btn-danger">
                                       <i className="la la-times"></i>
                                     </button>
                                   </div>
                                 </td>
                               </tr>
-                            );
-                          })}
+                              <tr>
+                                <td>2</td>
+                                <td>
+                                dolo      
+                                  <sup>650mg</sup>
+                                </td>
+                                <td>Antibiotics   </td>
+                                <td>Prescription vs. Over-the-Counter (OTC)   </td>
+                                <td>221</td>
+                                <td className="td-actions">
+                                  <div className="form-button-action">
+                                    <Link to="/updatemedicine">
+                                      <button
+                                        type="button"
+                                        className="btn btn-link btn-success"
+                                       >
+                                        <i className="la la-edit"></i>
+                                      </button>
+                                    </Link>
+                                    <button
+                                      type="button"
+                                     
+                                      className="btn btn-link btn-danger">
+                                      <i className="la la-times"></i>
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr>    <tr>
+                                <td>3</td>
+                                <td>
+                                Paracetamol
+                                  <sup>500mg</sup>
+                                </td>
+                                <td>Analgesics</td>
+                                <td>Prescription vs. Over-the-Counter (OTC)   </td>
+                                <td>20</td>
+                                <td className="td-actions">
+                                  <div className="form-button-action">
+                                    <Link to="/updatemedicine">
+                                      <button
+                                        type="button"
+                                        className="btn btn-link btn-success"
+                                       >
+                                        <i className="la la-edit"></i>
+                                      </button>
+                                    </Link>
+                                    <button
+                                      type="button"
+                                     
+                                      className="btn btn-link btn-danger">
+                                      <i className="la la-times"></i>
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>4</td>
+                                <td>
+                                Paracetamol
+                                  <sup>100mg</sup>
+                                </td>
+                                <td>Analgesics</td>
+                                <td>Prescription vs. Over-the-Counter (OTC)   </td>
+                                <td>20</td>
+                                <td className="td-actions">
+                                  <div className="form-button-action">
+                                    <Link to="/updatemedicine">
+                                      <button
+                                        type="button"
+                                        className="btn btn-link btn-success"
+                                       >
+                                        <i className="la la-edit"></i>
+                                      </button>
+                                    </Link>
+                                    <button
+                                      type="button"
+                                     
+                                      className="btn btn-link btn-danger">
+                                      <i className="la la-times"></i>
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr>
                         </tbody>
                       </table>
                     </div>

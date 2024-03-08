@@ -102,14 +102,24 @@ const EquipmentList = (props) => {
       title: "Action",
       key: "action",
       render: (text, record) => (
-        <span>
-          <Link to={`/equipment/${record.id}`}>
-            <Button type="link">Details</Button>
+        <td className="td-actions">
+        <div className="form-button-action">
+          <Link to="/updatemedicine">
+            <button
+              type="button"
+              className="btn btn-link btn-success"
+             >
+              <i className="la la-edit"></i>
+            </button>
           </Link>
-          <Button type="link" danger onClick={() => handleDeleteButton(record.id)}>
-            Delete
-          </Button>
-        </span>
+          <button
+            type="button"
+           
+            className="btn btn-link btn-danger">
+            <i className="la la-times"></i>
+          </button>
+        </div>
+      </td>
       ),
     },
   ];

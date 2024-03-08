@@ -33,7 +33,7 @@ export default function AdminSideBar(props) {
             <div className="info">
               <a>
                 <span>
-                 Tony Manrique
+                 Marco Gonzalez
                   <span className="user-level">Administrator</span>
                 </span>
               </a>

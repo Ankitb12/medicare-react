@@ -52,9 +52,8 @@ export default function MedicineTypes() {
                             <th>#</th>
                             <th>location</th>
                             <th>RFID</th>
-                            <th>Region</th>
+                           
     <th>Patient Name</th>
-    <th>Disease</th>
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -63,8 +62,8 @@ export default function MedicineTypes() {
                                 <td>1</td>
                                 <td>483 Orn Manors Apt. 955</td>
                                 <td>327384</td>
-                                <td> West Kaylin</td>
-                                <td>Leo</td>  <td>typhoid</td>
+                             
+                                <td>Leo</td> 
                                 <td className="td-actions">
                                   <div className="form-button-action">
                                     <Link to="/updatetype">
@@ -88,8 +87,7 @@ export default function MedicineTypes() {
                                 <td>8118 Reynolds Mission</td>
                                
                                 <td>896575</td>
-                                <td> West bangal</td>
-                                <td>Elon</td>  <td>smallpox</td>
+                                <td>Elon</td>  
                                 <td className="td-actions">
                                   <div className="form-button-action">
                                     <Link to="/updatetype">
@@ -112,8 +110,8 @@ export default function MedicineTypes() {
                                 <td>186 Vanessa Haven</td>
                               
                                 <td>867595</td>
-                                <td> Port Mylene</td>
-                                <td>Justine</td>  <td>hemophilia</td>
+                            
+                                <td>Justine</td>
                                 <td className="td-actions">
                                   <div className="form-button-action">
                                     <Link to="/updatetype">
@@ -137,8 +135,56 @@ export default function MedicineTypes() {
                                 <td>348 Batz Extensions </td>
                                
                                 <td>774783</td>
-                                <td> Russelchester</td>
-                                <td>Baber</td>  <td>Blood Cancer</td>
+                      
+                                <td>Baber</td> 
+                                <td className="td-actions">
+                                  <div className="form-button-action">
+                                    <Link to="/updatetype">
+                                      <button
+                                        type="button"
+                                        className="btn btn-link btn-success">
+                                        <i className="la la-edit"></i>
+                                      </button>
+                                    </Link>
+                                    <button
+                                      type="button"
+                                    
+                                      className="btn btn-link btn-danger">
+                                      <i className="la la-times"></i>
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>5</td>
+                                <td>348  Extensions </td>
+                               
+                              
+                                <td> 3234343</td>
+                                <td>Not allocated</td> 
+                                <td className="td-actions">
+                                  <div className="form-button-action">
+                                    <Link to="/updatetype">
+                                      <button
+                                        type="button"
+                                        className="btn btn-link btn-success">
+                                        <i className="la la-edit"></i>
+                                      </button>
+                                    </Link>
+                                    <button
+                                      type="button"
+                                    
+                                      className="btn btn-link btn-danger">
+                                      <i className="la la-times"></i>
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr> <tr>
+                                <td>6</td>
+                                <td>348 Batz Extensions </td>
+                                <td>774783</td>
+                              
+                                <td>Not allocated</td> 
                                 <td className="td-actions">
                                   <div className="form-button-action">
                                     <Link to="/updatetype">

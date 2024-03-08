@@ -72,7 +72,7 @@ export default function AdminHeader(props) {
                     className="img-circle"
                     
                   />
-                  <span>Tony Manrique</span>{" "}
+                  <span>Marco Gonzalez</span>{" "}
                 </a>
                 <ul className={`dropdown-menu dropdown-user ${showDropDown ? "show" : ""}`}>
                   <li>
@@ -81,7 +81,7 @@ export default function AdminHeader(props) {
                         <img src={`assets/img/profile4.jpg`} alt="user" />
                       </div>
                       <div className="u-text">
-                        <h4>Tony Manrique</h4>
+                        <h4>Marco Gonzalez</h4>
                         <p className="text-muted">{emailAddress !== "" ? emailAddress : "Email"}</p>
                       </div>
                     </div>
